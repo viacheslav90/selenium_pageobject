@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test" parallel="none" allow-return-values="true">
+    <test name="LoginTest"  preserve-order="false">
+        <classes>
+            <class name="test.LoginTest" />
+            <class name="test.system.info.UserSessionTest" />
+            <class name="test.system.info.BadgesAdministrationPageTest" />
+            <class name="test.system.info.EHCacheStatePageTest" />
+            <class name="test.system.info.JavaSystemPropertiesPageTest" />
+            <class name="test.system.info.LogLevelsConfigurationPageTest" />
+            <class name="test.system.info.OfficePlansAdministrationTest" />
+            <class name="test.system.info.RMScacheTest" />
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
