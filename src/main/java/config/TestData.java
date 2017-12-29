@@ -7,8 +7,8 @@ public class TestData {
 
     public static String ENVIRONMENT = "https://rvision-int.exadel.by/";
     public static WebDriver WEB_DRIVER = new ChromeDriver();
-    public static String EXIST_LOGIN = "Akomolov";
-    public static String EXIST_PASSWORD = "123";
+    public static String EXIST_LOGIN = "";
+    public static String EXIST_PASSWORD = "";
 
 
 }
