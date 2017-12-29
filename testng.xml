@@ -3,6 +3,10 @@
     <test name="LoginTest"  preserve-order="false">
         <classes>
             <class name="test.LoginTest" />
+        </classes>
+    </test> <!-- Test -->
+    <test name="SystemInfoPagesValidation"  preserve-order="false">
+        <classes>
             <class name="test.system.info.UserSessionTest" />
             <class name="test.system.info.BadgesAdministrationPageTest" />
             <class name="test.system.info.EHCacheStatePageTest" />
