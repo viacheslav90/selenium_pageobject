@@ -6,9 +6,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.LogLevelsConfigurationPage;
+import page.home.system.info.RMScachePage;
+import page.home.system.info.RMSsettingsPage;
 
-public class LogLevelsConfigurationPageTest {
+public class RMSsettingsPageTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
@@ -29,8 +30,8 @@ public class LogLevelsConfigurationPageTest {
     }
 
     @Test
-    public void validateLogLevelsConfiguration(){
-        LogLevelsConfigurationPage logLevelsConfigurationPage = this.homePage.openLogLevelsConfigurationPage();
-
+    public void validateRMSsettingsPage() {
+        RMSsettingsPage rmSsettingsPage = this.homePage.openRMSsettingsPage();
     }
+
 }

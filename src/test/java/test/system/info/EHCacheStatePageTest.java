@@ -8,6 +8,8 @@ import page.LoginPage;
 import page.home.HomePage;
 import page.home.system.info.EHCacheStatePage;
 
+import static java.lang.Thread.sleep;
+
 public class EHCacheStatePageTest {
 
     private LoginPage loginPage;
@@ -29,7 +31,7 @@ public class EHCacheStatePageTest {
     }
 
     @Test
-    public void validateEHCacheStatePageTest(){
+    public void validateEHCacheStatePage(){
         EHCacheStatePage ehCacheStatePage= this.homePage.openEHCacheStatePage();
     }
 }

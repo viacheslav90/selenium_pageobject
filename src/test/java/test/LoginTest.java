@@ -9,6 +9,8 @@ import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
 
+import static java.lang.Thread.sleep;
+
 
 public class LoginTest extends Assert {
 
@@ -27,12 +29,18 @@ public class LoginTest extends Assert {
 
     @Test()
     public void successfulLoginTest(){
-        this.loginPage.enterLogin(TestData.EXIST_LOGIN);
+        this.loginPage.enterLogin(TestData.EXIST_USERNAME);
         this.loginPage.enterPassword(TestData.EXIST_PASSWORD);
         this.homePage = this.loginPage.clickLoginButton();
         assertEquals(homePage.getTitle(), "Exadel rVision-Home");
         String homePageActual = homePage.getUrl();
         String homePageExpected = TestData.ENVIRONMENT + "rms-web/";
         assertEquals(homePageActual, homePageExpected);
+        try {
+            sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
+
 }

@@ -26,7 +26,7 @@ public class BadgesAdministrationPageTest {
     }
 
     @Test
-    public void validateBadgesAdministratorPageTest(){
+    public void validateBadgesAdministratorPage(){
         BadgesAdministrationPage badgesAdministrationPage = this.homePage.openBadgesAdministrationPage();
 
     }

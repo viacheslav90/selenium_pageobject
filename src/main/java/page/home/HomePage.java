@@ -10,7 +10,9 @@ import page.home.system.info.*;
 
 public class HomePage extends BasePage {
 
-
+    /*
+    * Open User Session page from System Info tab
+     */
     public UserSessionPage openUserSessionPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -20,6 +22,9 @@ public class HomePage extends BasePage {
         return new UserSessionPage();
     }
 
+    /*
+     * Open Java System Properties page from System Info tab
+     */
     public JavaSystemPropertiesPage openJavaSystemPropertiesPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -29,6 +34,9 @@ public class HomePage extends BasePage {
         return new JavaSystemPropertiesPage();
     }
 
+    /*
+    * Open System Environment page from System Info tab
+     */
     public SystemEnvironment openSystemEnvironment(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -38,6 +46,9 @@ public class HomePage extends BasePage {
         return new SystemEnvironment();
     }
 
+    /*
+    * Open TTS Synchronization page from System Info tab
+     */
     public TTSsynchronizationPage openTTSsynchronizationPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -47,6 +58,9 @@ public class HomePage extends BasePage {
         return new TTSsynchronizationPage();
     }
 
+    /*
+    * Open RMS Notification page from System Info tab
+     */
     public RMSnotificationPage openRMSnotificationPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -56,6 +70,9 @@ public class HomePage extends BasePage {
         return new RMSnotificationPage();
     }
 
+    /*
+    * Open RMS Settings page from System Info tab
+     */
     public RMSsettingsPage openRMSsettingsPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -65,6 +82,9 @@ public class HomePage extends BasePage {
         return new RMSsettingsPage();
     }
 
+    /*
+    * Open RMS Cache page from System Info tab
+     */
     public RMScachePage openRMScachePage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -74,6 +94,9 @@ public class HomePage extends BasePage {
         return new RMScachePage();
     }
 
+    /*
+    * Open RMS DB Consistency page from System Info tab
+     */
     public RMSDBconsistencyPage openRMSDBconsistencyPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -83,6 +106,9 @@ public class HomePage extends BasePage {
         return new RMSDBconsistencyPage();
     }
 
+    /*
+    * Open Office Plans Administration page from System Info tab
+     */
     public OfficePlansAdministrationPage openOfficePlansAdministrationPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -93,6 +119,9 @@ public class HomePage extends BasePage {
     }
 
 
+    /*
+    * Open Badges Administration page from System Info tab
+     */
     public BadgesAdministrationPage openBadgesAdministrationPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -102,6 +131,9 @@ public class HomePage extends BasePage {
         return new BadgesAdministrationPage();
     }
 
+    /*
+    * Open Log Levels Configuration page from System Info tab
+     */
     public LogLevelsConfigurationPage openLogLevelsConfigurationPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -111,6 +143,9 @@ public class HomePage extends BasePage {
         return new LogLevelsConfigurationPage();
     }
 
+    /*
+    * Open EH Cache State page from System Info tab
+     */
     public EHCacheStatePage openEHCacheStatePage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
         Actions bulder = new Actions(this.webDriver);
@@ -120,16 +155,12 @@ public class HomePage extends BasePage {
         return new EHCacheStatePage();
     }
 
+    /*
+    * Logout from rVision
+     */
     public void logOut(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.LOG_OUT)));
         this.webDriver.findElement(TopMenuLocators.LOG_OUT).click();
     }
 
-    public String getTitle(){
-        return this.webDriver.getTitle();
-    }
-
-    public String getUrl(){
-        return this.webDriver.getCurrentUrl();
-    }
 }

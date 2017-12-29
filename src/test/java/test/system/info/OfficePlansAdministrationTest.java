@@ -29,7 +29,7 @@ public class OfficePlansAdministrationTest {
     }
 
     @Test
-    public void validateLogLevelsConfigurationPage(){
+    public void validateOfficePlansAdministration(){
         OfficePlansAdministrationPage officePlansAdministrationPage = this.homePage.openOfficePlansAdministrationPage();
 
     }

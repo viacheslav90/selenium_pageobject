@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static java.lang.Thread.sleep;
+
 public class BasePage {
 
     protected WebDriver webDriver;
@@ -15,7 +17,7 @@ public class BasePage {
         this.webDriver = TestData.WEB_DRIVER;
         this.webDriver.manage().window().maximize();
         this.webDriver.get(TestData.ENVIRONMENT);
-        this.webDriverWait = new WebDriverWait(this.webDriver, 10);
+        this.webDriverWait = new WebDriverWait(this.webDriver, 20);
 
     }
 
@@ -25,6 +27,20 @@ public class BasePage {
 
     public void closeBrowser(){
         this.webDriver.close();
+    }
+
+    /*
+     * Get page title
+     */
+    public String getTitle(){
+        return this.webDriver.getTitle();
+    }
+
+    /*
+     * Get page URL
+     */
+    public String getUrl(){
+        return this.webDriver.getCurrentUrl();
     }
 }
 

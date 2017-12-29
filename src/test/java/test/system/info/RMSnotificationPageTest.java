@@ -6,9 +6,9 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.LogLevelsConfigurationPage;
+import page.home.system.info.RMSnotificationPage;
 
-public class LogLevelsConfigurationPageTest {
+public class RMSnotificationPageTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
@@ -23,14 +23,20 @@ public class LogLevelsConfigurationPageTest {
         this.homePage = loginPage.openHomePage();
     }
 
+    /*
     @AfterMethod
     void tearDown(){
         this.homePage.logOut();
     }
+    */
+
 
     @Test
-    public void validateLogLevelsConfiguration(){
-        LogLevelsConfigurationPage logLevelsConfigurationPage = this.homePage.openLogLevelsConfigurationPage();
-
+    public void validateRMSnotificationPage() {
+        this.homePage = loginPage.openHomePage();
+        RMSnotificationPage rmSnotificationPage = homePage.openRMSnotificationPage();
+        rmSnotificationPage.clickEmailQueuesTab();
+        rmSnotificationPage.clickBrokerTab();
+        rmSnotificationPage.clickEmailQueuesTab();
     }
 }

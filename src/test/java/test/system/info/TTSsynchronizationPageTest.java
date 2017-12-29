@@ -6,9 +6,10 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.LogLevelsConfigurationPage;
+import page.home.system.info.SystemEnvironment;
+import page.home.system.info.TTSsynchronizationPage;
 
-public class LogLevelsConfigurationPageTest {
+public class TTSsynchronizationPageTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
@@ -29,8 +30,8 @@ public class LogLevelsConfigurationPageTest {
     }
 
     @Test
-    public void validateLogLevelsConfiguration(){
-        LogLevelsConfigurationPage logLevelsConfigurationPage = this.homePage.openLogLevelsConfigurationPage();
-
+    public void validateTTSsynchronizationPage() {
+        TTSsynchronizationPage ttSsynchronizationPage = homePage.openTTSsynchronizationPage();
     }
+
 }

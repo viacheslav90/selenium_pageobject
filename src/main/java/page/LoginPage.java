@@ -31,15 +31,16 @@ public class LoginPage extends BasePage {
         WebElement loginButton = this.findElement(LoginPageLocators.LOGIN_BUTTON);
         loginButton.click();
         return new HomePage();
+
     }
 
     /*
-    * Log in
+    * Open Home page
      */
     public HomePage openHomePage(){
-        this.enterLogin(TestData.EXIST_LOGIN);
+        this.enterLogin(TestData.EXIST_USERNAME);
         this.enterPassword(TestData.EXIST_PASSWORD);
-        return this.clickLoginButton();
+        return clickLoginButton();
     }
 
 }
