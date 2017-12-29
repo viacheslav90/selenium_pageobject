@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.JavaSystemPropertiesPage;
 import page.home.system.info.LogLevelsConfigurationPage;
 
 public class LogLevelsConfigurationPageTest {

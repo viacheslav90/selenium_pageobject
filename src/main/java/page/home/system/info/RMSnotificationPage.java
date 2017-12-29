@@ -4,8 +4,5 @@ import page.BasePage;
 
 public class RMSnotificationPage extends BasePage {
 
-    public RMSnotificationPage(){
-        this.webDriver = super.webDriver;
-        this.webDriverWait = super.webDriverWait;
-    }
+
 }

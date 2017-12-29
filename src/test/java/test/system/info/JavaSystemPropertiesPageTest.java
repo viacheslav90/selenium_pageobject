@@ -6,7 +6,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.EHCacheStatePage;
 import page.home.system.info.JavaSystemPropertiesPage;
 
 public class JavaSystemPropertiesPageTest {

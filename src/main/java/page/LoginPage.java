@@ -5,14 +5,8 @@ import locators.LoginPageLocators;
 import org.openqa.selenium.WebElement;
 import page.home.HomePage;
 
-import static java.lang.Thread.sleep;
 
 public class LoginPage extends BasePage {
-
-    public LoginPage(){
-        this.webDriver = super.webDriver;
-        this.webDriverWait = super.webDriverWait;
-    }
 
     /*
     * Enter Login field

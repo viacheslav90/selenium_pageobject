@@ -9,8 +9,6 @@ import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
 
-import static java.lang.Thread.sleep;
-
 
 public class LoginTest extends Assert {
 

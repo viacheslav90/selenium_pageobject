@@ -4,8 +4,4 @@ import page.BasePage;
 
 public class EHCacheStatePage extends BasePage {
 
-    public EHCacheStatePage(){
-        this.webDriver = super.webDriver;
-        this.webDriverWait = super.webDriverWait;
-    }
 }

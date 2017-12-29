@@ -3,10 +3,8 @@ package test.system.info;
 import org.testng.annotations.*;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.JavaSystemPropertiesPage;
 import page.home.system.info.UserSessionPage;
 
-import static java.lang.Thread.sleep;
 
 
 public class UserSessionTest {

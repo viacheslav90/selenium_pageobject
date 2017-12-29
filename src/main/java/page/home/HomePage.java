@@ -2,7 +2,6 @@ package page.home;
 
 import locators.homepage.SystemInfoMenuLocators;
 import locators.homepage.TopMenuLocators;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import page.BasePage;
@@ -11,10 +10,6 @@ import page.home.system.info.*;
 
 public class HomePage extends BasePage {
 
-    public HomePage(){
-        this.webDriver = super.webDriver;
-        this.webDriverWait = super.webDriverWait;
-    }
 
     public UserSessionPage openUserSessionPage(){
         this.webDriverWait.until(ExpectedConditions.elementToBeClickable(this.findElement(TopMenuLocators.SYSTEM_INFO)));
