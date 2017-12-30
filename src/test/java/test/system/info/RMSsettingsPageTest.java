@@ -7,14 +7,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.LogLevelsConfigurationPage;
-import static org.testng.Assert.assertEquals;
+import page.home.system.info.RMSsettingsPage;
+import static org.testng.AssertJUnit.assertEquals;
 
-public class LogLevelsConfigurationPageTest {
+public class RMSsettingsPageTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
-    private LogLevelsConfigurationPage logLevelsConfigurationPage;
+    private RMSsettingsPage rmSsettingsPage;
 
     @BeforeClass
     private void setUpBeforeClass(){
@@ -28,15 +28,18 @@ public class LogLevelsConfigurationPageTest {
 
     @AfterMethod
     private void tearDown(){
-        this.logLevelsConfigurationPage.closeDriver();
+        this.rmSsettingsPage.closeDriver();
     }
 
     @Test
-    private void validateLogLevelsConfiguration(){
-        this.logLevelsConfigurationPage = this.homePage.openLogLevelsConfigurationPage();
-        String actualTitle = this.logLevelsConfigurationPage.getTitle();
-        String expectedTitle = "Exadel rVision-System Info / Log levels configuration";
+    private void validateRMSsettingsPage() {
+        this.rmSsettingsPage = this.homePage.openRMSsettingsPage();
+        String actualTitle = this.rmSsettingsPage.getTitle();
+        String expectedTitle = "Exadel rVision-System Info / RMS settings";
         assertEquals(expectedTitle, actualTitle);
-
+        this.rmSsettingsPage.clickUserSettingsTab();
+        this.rmSsettingsPage.clickVerificationTab();
+        this.rmSsettingsPage.clickApplicationSettingsTab();
     }
+
 }

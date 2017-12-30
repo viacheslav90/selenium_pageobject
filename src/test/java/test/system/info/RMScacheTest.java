@@ -1,37 +1,44 @@
 package test.system.info;
 
+import config.WebDriverFactory;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.OfficePlansAdministrationPage;
 import page.home.system.info.RMScachePage;
+import static org.testng.Assert.assertEquals;
 
 public class RMScacheTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
+    private  RMScachePage rmScachePage;
 
     @BeforeClass
-    public void setUpBeforeClass(){
-        this.loginPage = new LoginPage();
+    private void setUpBeforeClass(){
+        this.loginPage = new LoginPage(WebDriverFactory.getWebDriver());
     }
 
     @BeforeMethod
-    public void setUp(){
+    private void setUp(){
         this.homePage = loginPage.openHomePage();
     }
 
     @AfterMethod
-    void tearDown(){
-        this.homePage.logOut();
+    private void tearDown(){
+        this.rmScachePage.closeDriver();
     }
 
     @Test
-    public void validateRMScachePage() {
-        RMScachePage rmScachePage = this.homePage.openRMScachePage();
+    private void validateRMScachePage() {
+        this.rmScachePage = this.homePage.openRMScachePage();
+        String actualTitle = this.rmScachePage.getTitle();
+        String expectedTitle = "Exadel rVision-Home";
+        assertEquals(expectedTitle, actualTitle);
+        this.rmScachePage.clickImageCacheInvalidationTab();
+        this.rmScachePage.clickLDAPCacheInvalidationTab();
     }
 
 }

@@ -7,14 +7,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.LogLevelsConfigurationPage;
-import static org.testng.Assert.assertEquals;
+import page.home.system.info.TTSsynchronizationPage;
+import static org.testng.AssertJUnit.assertEquals;
 
-public class LogLevelsConfigurationPageTest {
+public class TTSsynchronizationPageTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
-    private LogLevelsConfigurationPage logLevelsConfigurationPage;
+    private TTSsynchronizationPage ttSsynchronizationPage;
 
     @BeforeClass
     private void setUpBeforeClass(){
@@ -28,15 +28,16 @@ public class LogLevelsConfigurationPageTest {
 
     @AfterMethod
     private void tearDown(){
-        this.logLevelsConfigurationPage.closeDriver();
+        this.homePage.logOut();
+        this.ttSsynchronizationPage.closeDriver();
     }
 
     @Test
-    private void validateLogLevelsConfiguration(){
-        this.logLevelsConfigurationPage = this.homePage.openLogLevelsConfigurationPage();
-        String actualTitle = this.logLevelsConfigurationPage.getTitle();
-        String expectedTitle = "Exadel rVision-System Info / Log levels configuration";
+    private void validateTTSsynchronizationPage() {
+        this.ttSsynchronizationPage = homePage.openTTSsynchronizationPage();
+        String actualTitle = this.ttSsynchronizationPage.getTitle();
+        String expectedTitle = "Exadel rVision-System Info / TTS Synchronization";
         assertEquals(expectedTitle, actualTitle);
-
     }
+
 }
