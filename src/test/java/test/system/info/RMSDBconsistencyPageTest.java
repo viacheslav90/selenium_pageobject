@@ -7,14 +7,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.LogLevelsConfigurationPage;
-import static org.testng.Assert.assertEquals;
+import page.home.system.info.RMSDBconsistencyPage;
+import static org.testng.AssertJUnit.assertEquals;
 
-public class LogLevelsConfigurationPageTest {
+public class RMSDBconsistencyPageTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
-    private LogLevelsConfigurationPage logLevelsConfigurationPage;
+    private RMSDBconsistencyPage rmsdBconsistencyPage;
 
     @BeforeClass
     private void setUpBeforeClass(){
@@ -28,15 +28,16 @@ public class LogLevelsConfigurationPageTest {
 
     @AfterMethod
     private void tearDown(){
-        this.logLevelsConfigurationPage.closeDriver();
+        this.rmsdBconsistencyPage.closeDriver();
     }
 
     @Test
-    private void validateLogLevelsConfiguration(){
-        this.logLevelsConfigurationPage = this.homePage.openLogLevelsConfigurationPage();
-        String actualTitle = this.logLevelsConfigurationPage.getTitle();
-        String expectedTitle = "Exadel rVision-System Info / Log levels configuration";
+    private void validateRMSDBconsistencyPage() {
+        this.rmsdBconsistencyPage = this.homePage.openRMSDBconsistencyPage();
+        String actualTitle = this.rmsdBconsistencyPage.getTitle();
+        String expectedTitle = "Exadel rVision-System Info / RMS DB consistency";
         assertEquals(expectedTitle, actualTitle);
-
+        this.rmsdBconsistencyPage.clickManageTestsTab();
+        this.rmsdBconsistencyPage.clickRunTestsTab();
     }
 }

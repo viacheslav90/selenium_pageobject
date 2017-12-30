@@ -4,7 +4,7 @@
         <classes>
             <class name="test.LoginTest" />
         </classes>
-    </test> <!-- Test -->
+    </test>
     <test name="SystemInfoPagesValidation"  preserve-order="false">
         <classes>
             <class name="test.system.info.UserSessionTest" />
@@ -13,7 +13,11 @@
             <class name="test.system.info.JavaSystemPropertiesPageTest" />
             <class name="test.system.info.LogLevelsConfigurationPageTest" />
             <class name="test.system.info.OfficePlansAdministrationTest" />
-            <class name="test.system.info.RMScacheTest" />
+            <class name="test.system.info.RMSDBconsistencyPageTest" />
+            <class name="test.system.info.RMSnotificationPageTest" />
+            <class name="test.system.info.RMSsettingsPageTest" />
+            <class name="test.system.info.SystemEnvironmentTest" />
+            <class name="test.system.info.TTSsynchronizationPageTest" />
         </classes>
     </test> <!-- Test -->
 </suite> <!-- Suite -->

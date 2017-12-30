@@ -7,15 +7,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.JavaSystemPropertiesPage;
+import page.home.system.info.RMSnotificationPage;
 import static org.testng.AssertJUnit.assertEquals;
 
-public class JavaSystemPropertiesPageTest {
+
+public class RMSnotificationPageTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
-    private JavaSystemPropertiesPage javaSystemPropertiesPage;
-
+    private RMSnotificationPage rmSnotificationPage;
 
     @BeforeClass
     private void setUpBeforeClass(){
@@ -27,16 +27,23 @@ public class JavaSystemPropertiesPageTest {
         this.homePage = loginPage.openHomePage();
     }
 
+
     @AfterMethod
     private void tearDown(){
-        this.javaSystemPropertiesPage.closeDriver();
+        this.rmSnotificationPage.closeDriver();
     }
 
+
     @Test
-    private void validateJavaSystemPropertiesPage(){
-        this.javaSystemPropertiesPage = this.homePage.openJavaSystemPropertiesPage();
-        String actualTitle = this.javaSystemPropertiesPage.getTitle();
-        String expectedTitle = "Exadel rVision-System Info / Java System Properties";
+    private void validateRMSnotificationPage() {
+        this.rmSnotificationPage = homePage.openRMSnotificationPage();
+        String actualTitle = this.rmSnotificationPage.getTitle();
+        String expectedTitle = "Exadel rVision-System Info / RMS notification";
         assertEquals(expectedTitle, actualTitle);
+        this.rmSnotificationPage.clickEventQueuesTab();
+        this.rmSnotificationPage.clickRecipientsTab();
+        this.rmSnotificationPage.clickEmailDataTab();
+        this.rmSnotificationPage.clickBrokerTab();
+        this.rmSnotificationPage.clickEmailQueuesTab();
     }
 }

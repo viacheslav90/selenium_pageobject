@@ -1,34 +1,39 @@
 package test.system.info;
 
+import config.WebDriverFactory;
+import org.testng.Assert;
 import org.testng.annotations.*;
 import page.LoginPage;
 import page.home.HomePage;
 import page.home.system.info.UserSessionPage;
 
-
-
-public class UserSessionTest {
+public class UserSessionTest extends Assert {
 
     private LoginPage loginPage;
     private HomePage homePage;
+    private UserSessionPage userSessionPage;
 
     @BeforeClass
-    public void setUpBeforeClass(){
-        this.loginPage = new LoginPage();
+    private void setUpBeforeClass() {
+        this.loginPage = new LoginPage(WebDriverFactory.getWebDriver());
     }
 
+
     @BeforeMethod
-    public void setUp(){
+    private void setUp() {
         this.homePage = loginPage.openHomePage();
     }
 
     @AfterMethod void tearDown(){
-        this.homePage.logOut();
+        this.userSessionPage.closeDriver();
     }
 
     @Test
-    public void validateUserSessionPageTest(){
-        UserSessionPage userSessionPage = this.homePage.openUserSessionPage();
-
+    private void validateUserSessionPageTest() {
+        this.userSessionPage = this.homePage.openUserSessionPage();
+        String actualTitle = this.userSessionPage.getTitle();
+        String expectedTitle = "Exadel rVision-System Info / User Session";
+        assertEquals(actualTitle, expectedTitle);
     }
+
 }

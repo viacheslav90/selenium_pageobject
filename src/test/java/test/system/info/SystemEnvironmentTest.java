@@ -7,14 +7,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
-import page.home.system.info.LogLevelsConfigurationPage;
+import page.home.system.info.SystemEnvironment;
 import static org.testng.Assert.assertEquals;
 
-public class LogLevelsConfigurationPageTest {
+public class SystemEnvironmentTest {
 
     private LoginPage loginPage;
     private HomePage homePage;
-    private LogLevelsConfigurationPage logLevelsConfigurationPage;
+    private SystemEnvironment systemEnvironment;
 
     @BeforeClass
     private void setUpBeforeClass(){
@@ -28,15 +28,14 @@ public class LogLevelsConfigurationPageTest {
 
     @AfterMethod
     private void tearDown(){
-        this.logLevelsConfigurationPage.closeDriver();
+        this.systemEnvironment.closeDriver();
     }
 
     @Test
-    private void validateLogLevelsConfiguration(){
-        this.logLevelsConfigurationPage = this.homePage.openLogLevelsConfigurationPage();
-        String actualTitle = this.logLevelsConfigurationPage.getTitle();
-        String expectedTitle = "Exadel rVision-System Info / Log levels configuration";
+    private void validateSystemEnvironment() {
+        this.systemEnvironment = homePage.openSystemEnvironment();
+        String actualTitle = this.systemEnvironment.getTitle();
+        String expectedTitle = "Exadel rVision-System Info / System Environment";
         assertEquals(expectedTitle, actualTitle);
-
     }
 }

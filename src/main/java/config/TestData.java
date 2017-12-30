@@ -1,14 +1,12 @@
 package config;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 public class TestData {
 
-    public static String ENVIRONMENT = "https://rvision-int.exadel.by/";
-    public static WebDriver WEB_DRIVER = new ChromeDriver();
-    public static String EXIST_LOGIN = "";
-    public static String EXIST_PASSWORD = "";
+    // Working environment
+    public static final String ENVIRONMENT = "https://rvision-int.exadel.by/";
 
+    // Username/password of existing user
+    public static final String EXIST_USERNAME = "Akomolov";
+    public static final String EXIST_PASSWORD = "123";
 
 }

@@ -2,6 +2,7 @@ package test;
 
 
 import config.TestData;
+import config.WebDriverFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -9,30 +10,30 @@ import org.testng.annotations.Test;
 import page.LoginPage;
 import page.home.HomePage;
 
-
 public class LoginTest extends Assert {
 
     private LoginPage loginPage;
     private HomePage homePage;
 
     @BeforeClass
-    public void setUpBeforeClass(){
-        this.loginPage = new LoginPage();
+    private void setUpBeforeClass(){
+        this.loginPage = new LoginPage(WebDriverFactory.getWebDriver());
     }
 
     @AfterMethod
-    public void tearDown(){
+    private void tearDown(){
         this.homePage.logOut();
+        this.loginPage.closeDriver();
     }
 
     @Test()
-    public void successfulLoginTest(){
-        this.loginPage.enterLogin(TestData.EXIST_LOGIN);
+    private void successfulLoginTest(){
+        this.loginPage.enterLogin(TestData.EXIST_USERNAME);
         this.loginPage.enterPassword(TestData.EXIST_PASSWORD);
         this.homePage = this.loginPage.clickLoginButton();
-        assertEquals(homePage.getTitle(), "Exadel rVision-Home");
-        String homePageActual = homePage.getUrl();
-        String homePageExpected = TestData.ENVIRONMENT + "rms-web/";
-        assertEquals(homePageActual, homePageExpected);
+        String actualTitle = this.homePage.getTitle();
+        String expectedTitle = "Exadel rVision-Home";
+        assertEquals(expectedTitle, actualTitle);
     }
+
 }
